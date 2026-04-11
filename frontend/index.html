@@ -2,29 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Fake News Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>AI Fake News Detector</h1>
-    <p class="subtitle">Check if news is Real or Fake using AI</p>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
 
-    <textarea id="newsInput" placeholder="Paste your news here..."></textarea>
+    <div class="page-wrap">
 
-    <button onclick="checkNews()">Analyze News</button>
+        <header class="site-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12l2 2 4-4"/>
+                        <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                FactCheck<span>AI</span>
+            </div>
+            <div class="header-badge">
+                <span class="live-dot"></span>
+                Model Online
+            </div>
+        </header>
 
-    <div id="resultBox">
-        <p id="result"></p>
+        <section class="hero">
+
+            <h1>Fake News <span class="gradient-text">Detector</span></h1>
+            <p class="hero-sub">Paste any news snippet and let the AI determine its authenticity in seconds</p>
+        </section>
+
+        <div class="main-card">
+            <div class="scan-line" id="scanLine"></div>
+
+            <label class="input-label" for="newsInput">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                </svg>
+                News Article / Text
+            </label>
+
+            <div class="textarea-wrap">
+                <textarea
+                    id="newsInput"
+                    placeholder="Paste the news content here to analyze..."
+                    oninput="updateChar()"
+                ></textarea>
+            </div>
+
+            <div class="input-footer">
+                <span class="char-count" id="charCount">0 characters</span>
+                <button class="clear-btn" onclick="clearInput()">Clear</button>
+            </div>
+
+            <button class="analyze-btn" id="analyzeBtn" onclick="checkNews()">
+                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <span class="btn-text">Analyze News</span>
+                <div class="btn-shimmer"></div>
+            </button>
+
+            <div class="result-box" id="resultBox">
+                <div class="result-top">
+                    <div class="result-icon-wrap" id="resultIconWrap">
+                        <span id="resultIcon"></span>
+                    </div>
+                    <div class="result-text">
+                        <div class="result-verdict" id="resultVerdict"></div>
+                        <div class="result-conf" id="resultConf"></div>
+                    </div>
+                </div>
+
+                <div class="conf-bar-section" id="confBarSection">
+                    <div class="conf-bar-label">
+                        <span>Confidence</span>
+                        <span id="confPct">0%</span>
+                    </div>
+                    <div class="conf-bar-track">
+                        <div class="conf-bar-fill" id="confBar"></div>
+                    </div>
+                </div>
+
+                <div class="stats-row" id="statsRow"></div>
+            </div>
+        </div>
+
+        <div class="how-strip">
+            <div class="how-step">
+                <div class="step-num">01</div>
+                <div class="step-txt">Paste news text</div>
+            </div>
+            <div class="how-arrow">→</div>
+            <div class="how-step">
+                <div class="step-num">02</div>
+                <div class="step-txt">AI processes it</div>
+            </div>
+            <div class="how-arrow">→</div>
+            <div class="how-step">
+                <div class="step-num">03</div>
+                <div class="step-txt">Get verdict</div>
+            </div>
+        </div>
+
+        <footer class="site-footer">
+            Built by <span>Deepak</span> &mdash; Powered by Python &amp; Machine Learning
+        </footer>
+
     </div>
-</div>
 
-<footer>
-    Built by Deepak
-</footer>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
