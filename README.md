@@ -30,7 +30,9 @@ It combines:
 <p align="center">
   <img src="demo_UI.png" alt="AI Fake News Detector" width="800"/>
 </p>
-
+<p align="center">
+  <img src="demo_UI2.png" alt="AI Fake News Detector" width="800"/>
+</p>
 ---
 
 ## 🛠️ Tech Stack
