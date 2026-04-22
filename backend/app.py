@@ -6,8 +6,37 @@ app = Flask(__name__)
 CORS(app)
 
 # Load model and vectorizer
-model = joblib.load("model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
+import os
+
+if os.path.exists("model.pkl"):
+    model = joblib.load("model.pkl")
+    vectorizer = joblib.load("vectorizer.pkl")
+else:
+    print("Training model...")
+
+    import pandas as pd
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.model_selection import train_test_split
+    from sklearn.linear_model import LogisticRegression
+
+    fake = pd.read_csv("Fake.csv")
+    true = pd.read_csv("True.csv")
+
+    fake["label"] = 0
+    true["label"] = 1
+
+    data = pd.concat([fake, true])
+    X = data["text"]
+    y = data["label"]
+
+    vectorizer = TfidfVectorizer(max_features=5000)
+    X = vectorizer.fit_transform(X)
+
+    model = LogisticRegression()
+    model.fit(X, y)
+
+    joblib.dump(model, "model.pkl")
+    joblib.dump(vectorizer, "vectorizer.pkl")
 
 @app.route("/")
 def home():
