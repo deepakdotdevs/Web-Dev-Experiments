@@ -18,10 +18,7 @@ def home():
 def predict():
     data = request.json["text"]
 
-    # Convert text → numbers
     transformed = vectorizer.transform([data])
-
-    # Predict
     prediction = model.predict(transformed)[0]
     prob = model.predict_proba(transformed)[0]
 
