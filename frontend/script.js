@@ -38,7 +38,7 @@ async function checkNews() {
     box.style.display  = 'none';
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/predict', {
+        const response = await fetch('https://fake-news-backend-9c6y.onrender.com/predict', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text })
