@@ -77,18 +77,31 @@ User Input → Frontend → Flask API → ML Model → Result → UI
 
 
 fake-news-detector/
+
 │
+
 ├── backend/
+
 │ ├── app.py
+
 │ ├── train_model.py
+
 │ ├── data_processing.py
+
 │
+
 ├── frontend/
+
 │ ├── index.html
+
 │ ├── style.css
+
 │ ├── script.js
+
 │
+
 ├── .gitignore
+
 └── README.md
 
 
