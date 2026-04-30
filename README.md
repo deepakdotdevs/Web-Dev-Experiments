@@ -4,6 +4,13 @@
 
 ---
 
+## 🌐 Live Demo
+
+- 🔗 Frontend: https://web-dev-experiments-roan.vercel.app/  
+- 🔗 Backend: https://fake-news-backend-9c6y.onrender.com/  
+
+---
+
 ## 📌 Overview
 
 This project uses a trained **Machine Learning model** to analyze news text and classify it as **Real News ✅** or **Fake News ❌** along with a confidence score.
@@ -20,59 +27,49 @@ It combines:
 - 📰 Paste any news and analyze instantly  
 - 🤖 AI-based prediction (Real / Fake)  
 - 📊 Confidence score display  
-- 🎨 Modern UI with animations  
-- ⚡ Fast API response using Flask  
+- 🎨 Modern UI  
+- ⚡ Fast API response  
 
 ---
 
 ## 📸 Demo Screenshot
 
 <p align="center">
-  <img src="demo_UI.png" alt="AI Fake News Detector" width="800"/>
+  <img src="demo_UI.png" width="800"/>
 </p>
+
 <p align="center">
-  <img src="demo_UI2.png" alt="AI Fake News Detector" width="800"/>
+  <img src="demo_UI2.png" width="800"/>
 </p>
+
 ---
 
 ## 🛠️ Tech Stack
 
 ### 🔹 Backend
-- Python 🐍
-- Flask 🌶️
+- Python
+- Flask
 - Scikit-learn
 - Pandas, NumPy
 - Joblib
 
 ### 🔹 Frontend
 - HTML5
-- CSS3 (Glassmorphism UI)
-- JavaScript (Fetch API)
+- CSS3
+- JavaScript
 
 ---
 
 ## 🧠 Machine Learning Model
 
-- Algorithm: **Logistic Regression**
-- Vectorization: **TF-IDF**
-- Accuracy: ~98%
-- Dataset: Fake & Real News Dataset (Kaggle)
+- Logistic Regression  
+- TF-IDF Vectorizer  
+- Accuracy: ~98%  
 
 ---
 
 ## ⚙️ Project Architecture
-
-User Input (Frontend)
-↓
-JavaScript (Fetch API)
-↓
-Flask API (/predict)
-↓
-ML Model (TF-IDF + Logistic Regression)
-↓
-Prediction + Confidence
-↓
-Frontend Display (UI)
+User Input → Frontend → Flask API → ML Model → Result → UI
 
 ---
 
@@ -80,74 +77,49 @@ Frontend Display (UI)
 
 
 fake-news-detector/
+
 │
+
 ├── backend/
+
 │ ├── app.py
+
 │ ├── train_model.py
+
 │ ├── data_processing.py
+
 │
+
 ├── frontend/
+
 │ ├── index.html
+
 │ ├── style.css
+
 │ ├── script.js
+
 │
+
 ├── .gitignore
+
 └── README.md
 
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 Run Locally
 
-### 1️⃣ Clone Repository
-
+```bash
 git clone https://github.com/deepakdotdevs/Web-Dev-Experiments.git
-
 cd fake-news-detector
-
-
----
-
-### 2️⃣ Install Dependencies
-
 pip install flask scikit-learn pandas numpy joblib flask-cors
-
-
----
-
-### 3️⃣ Run Backend
-
 cd backend
 python app.py
 
+⚠️ Note
+Large dataset and model files are excluded due to GitHub size limits.
 
-👉 Runs on: http://127.0.0.1:5000/
+👨‍💻 Author
 
----
-
-### 4️⃣ Run Frontend
-
-cd ../frontend
-open index.html
-
-
-👉 Or use **Live Server (recommended)**
-
----
-
-## ⚠️ Note
-
-- Dataset (`.csv`) and model files (`.pkl`) are excluded due to GitHub size limits.
-- They can be regenerated using the provided scripts.
-
----
-
-## 📸 Demo
-
-👉 Paste any news → Click **Analyze** → Get result instantly  
-
----
-
-## 🔮 Future Improvements
-
-- 🌐 URL-based news detection  
+Deepak Jangid
+🔗 https://github.com/deepakdotdevs
