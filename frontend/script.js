@@ -24,14 +24,12 @@ async function checkNews() {
     const statsRow = document.getElementById('statsRow');
     const scan     = document.getElementById('scanLine');
 
-    // Empty input guard
     if (!text) {
         showResult('warn', '⚠️', 'No input provided',
             'Please paste some news text above before analyzing.', null, null);
         return;
     }
 
-    // Loading state
     btn.disabled = true;
     btn.innerHTML = '<div class="spinner"></div><span class="btn-text">Analyzing...</span>';
     scan.style.display = 'block';
@@ -89,7 +87,6 @@ function showResult(type, emoji, label, subtext, confidence, stats) {
     const confSec  = document.getElementById('confBarSection');
     const statsRow = document.getElementById('statsRow');
 
-    // Set type class
     box.className = 'result-box ' + type;
     box.style.display = 'block';
 
